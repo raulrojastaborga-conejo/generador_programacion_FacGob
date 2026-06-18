@@ -1,0 +1,6 @@
+# FACGOB programación académica IA
+.DS_Store
+*.log
+.env
+secrets.*
+node_modules/
