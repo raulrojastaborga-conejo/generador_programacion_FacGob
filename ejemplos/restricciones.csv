@@ -1,0 +1,3 @@
+tipo_restriccion,elemento,restriccion,dureza,prioridad
+Sala,LAB,Solo cursos que requieren PC,Dura,Alta
+Horario,Viernes,Evitar último bloque,Blanda,Media

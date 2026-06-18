@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FACGOB — Programación académica con IA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Prototipo v1B</p>
+      <h1>Programación académica con IA</h1>
+      <p class="lead">Carga Exceles, escribe reglas en prosa, interpreta reglas con IA y genera una propuesta inicial con alertas.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel warning">
+      <h2>Alcance del prototipo</h2>
+      <p>La IA interpreta reglas en prosa. La optimización la hace un motor propio y verificable. Esta versión no actualiza Google Sheets.</p>
+    </section>
+
+    <section class="panel">
+      <h2>1. Configuración IA opcional</h2>
+      <label for="backendUrl">URL Web App Apps Script</label>
+      <input id="backendUrl" type="url" placeholder="https://script.google.com/macros/s/.../exec">
+      <p class="hint">La API key de Gemini debe quedar en Apps Script, no en GitHub. Si dejas esto vacío, el sistema usará reglas locales de prueba.</p>
+    </section>
+
+    <section class="panel">
+      <h2>2. Cargar archivos de entrada</h2>
+      <div class="grid upload-grid">
+        <label>Oferta <input type="file" id="fileOferta" accept=".xlsx,.xls,.csv"></label>
+        <label>Disponibilidad docente <input type="file" id="fileDisponibilidad" accept=".xlsx,.xls,.csv"></label>
+        <label>Salas <input type="file" id="fileSalas" accept=".xlsx,.xls,.csv"></label>
+        <label>Bloques <input type="file" id="fileBloques" accept=".xlsx,.xls,.csv"></label>
+        <label>Demanda <input type="file" id="fileDemanda" accept=".xlsx,.xls,.csv"></label>
+        <label>Restricciones <input type="file" id="fileRestricciones" accept=".xlsx,.xls,.csv"></label>
+      </div>
+      <div class="actions">
+        <button id="btnCargar">Cargar y validar inputs</button>
+      </div>
+      <div id="inputStatus" class="status"></div>
+    </section>
+
+    <section class="panel">
+      <h2>3. Reglas en prosa</h2>
+      <textarea id="reglasProsa" rows="8" placeholder="Ejemplo: No usar laboratorios para cursos que no requieren computador. Los cursos de inglés deben ir idealmente en el primer bloque de la mañana."></textarea>
+      <div class="actions">
+        <button id="btnInterpretar">Interpretar reglas con IA</button>
+      </div>
+      <pre id="reglasEstructuradas" class="codebox"></pre>
+    </section>
+
+    <section class="panel">
+      <h2>4. Generar propuesta</h2>
+      <div class="actions">
+        <button id="btnGenerar">Generar propuesta</button>
+        <button id="btnExportarProgramacion" disabled>Descargar programación CSV</button>
+        <button id="btnExportarAlertas" disabled>Descargar alertas CSV</button>
+      </div>
+      <div id="summary" class="summary"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Programación sugerida</h2>
+      <div class="table-wrap"><table id="tablaProgramacion"></table></div>
+    </section>
+
+    <section class="panel">
+      <h2>Alertas y decisiones pendientes</h2>
+      <div class="table-wrap"><table id="tablaAlertas"></table></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>FACGOB — Herramienta experimental. No reemplaza validación académica ni decisión institucional.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="js/parser.js"></script>
+  <script src="js/optimizer.js"></script>
+  <script src="js/export.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
