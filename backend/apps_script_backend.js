@@ -61,8 +61,7 @@ function cleanJson_(text) {
 }
 
 function fallbackRules_(rulesText) {
-  return String(rulesText || '').split(/
-+/).map(function(line, idx) {
+  return String(rulesText || '').split(/\n+/).map(function(line, idx) {
     line = line.trim();
     if (!line) return null;
     return {
