@@ -102,15 +102,8 @@ La IA debe devolver reglas estructuradas en JSON. El motor propio usa esas regla
 
 ## Instalación en GitHub Pages
 
-1. Crear un repositorio nuevo en GitHub, por ejemplo:
-
-```text
-facgob-programacion-academica-ia
-```
-
-2. Subir todos los archivos de esta carpeta al repositorio.
-3. Ir a `Settings > Pages`.
-4. Seleccionar:
+1. Ir a `Settings > Pages`.
+2. Seleccionar:
 
 ```text
 Source: Deploy from a branch
@@ -118,7 +111,13 @@ Branch: main
 Folder: /root
 ```
 
-5. Esperar la URL pública de GitHub Pages.
+3. Guardar y esperar la URL pública de GitHub Pages.
+
+URL esperada:
+
+```text
+https://raulrojastaborga-conejo.github.io/generador_programacion_FacGob/
+```
 
 ## Configuración de Apps Script
 
@@ -176,14 +175,3 @@ v2: guardar resultados en Google Sheet maestro.
 v3: historial, versiones, trazabilidad y permisos.
 v4: optimización avanzada y comparación de escenarios.
 ```
-
-
-## Nota sobre creación del repositorio
-
-El repositorio recomendado es independiente del sitio actual de Secretaría de Estudios:
-
-```text
-raulrojastaborga-conejo/facgob-programacion-academica-ia
-```
-
-Si se crea en GitHub con README inicial, estos archivos pueden cargarse directamente a la rama `main`.
